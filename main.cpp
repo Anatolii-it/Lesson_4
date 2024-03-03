@@ -51,5 +51,6 @@ int main() {
     }
     cout << "| " << total_sum << endl;
 
+    _getch();
     return 0;
 }
