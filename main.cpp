@@ -48,7 +48,7 @@ int main() {
     cout << "Другий масив:" << endl;
     for (int i = 0; i < ROWS2; ++i) {
         for (int j = 0; j < COLS2; ++j) {
-            cout << array2[i][j] << " ";
+            cout << array2[i][j] << "  ";
         }
         cout << endl;
     }
