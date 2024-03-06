@@ -16,41 +16,45 @@ int main() {
         {12, 1, 1, 1},
         {0, 7, 12, 1}
     };
-
-    int row_sum[rows] = { 0 };
-    int col_sum[cols] = { 0 };
     int total_sum = 0;
+    int x = 0;
+    int max = 0;
+    int min = array[1][1];
+    
 
-    // Обчислення сум рядків та загальної суми
+    // загальна сума
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            row_sum[i] += array[i][j];
             total_sum += array[i][j];
+
         }
     }
-
-    // Обчислення сум стовпців
-    for (int j = 0; j < cols; ++j) {
-        for (int i = 0; i < rows; ++i) {
-            col_sum[j] += array[i][j];
-        }
-    }
-
-    // Виведення масиву та сум рядків
+    
+    // середне аріфметичне
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            cout << array[i][j] << "  ";
+            x += 1;
         }
-        cout << "| " << row_sum[i] << endl;
     }
 
-    cout << "--------------------" << endl;
+    //мінімальне
+    
 
-    // Виведення сум стовпців та загальної суми
-    for (int j = 0; j < cols; ++j) {
-        cout << col_sum[j] << "  ";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            if (array[i][j] < min) {
+                min = array[i][j];
+            }
+            if (array[i][j] > max) {
+                max = array[i][j];
+            }
+        }
     }
-    cout << "| " << total_sum << endl;
+
+    cout << "Загальна сума " << total_sum << endl;
+    cout << "Середне аріфметичне " << total_sum/x << endl;
+    cout << "Найменьше з масиву " << min << endl;
+    cout << "Найбільше з масиву " << max << endl;
 
     _getch();
     return 0;
