@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#include <vector>
 #include <conio.h>
 
 using namespace std;
@@ -8,6 +7,7 @@ using namespace std;
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+
     const int rows = 3;
     const int cols = 4;
 
@@ -16,13 +16,12 @@ int main() {
         {12, 1, 1, 1},
         {0, 7, 12, 1}
     };
+
+    int row_sum[rows] = { 0 };
+    int col_sum[cols] = { 0 };
     int total_sum = 0;
-    int ser_a = 0;
-    int max =  0 ;
-    int min =  0 ;
-    
 
-
+    // Обчислення сум рядків та загальної суми
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             row_sum[i] += array[i][j];
@@ -30,14 +29,14 @@ int main() {
         }
     }
 
-
+    // Обчислення сум стовпців
     for (int j = 0; j < cols; ++j) {
         for (int i = 0; i < rows; ++i) {
             col_sum[j] += array[i][j];
         }
     }
 
-
+    // Виведення масиву та сум рядків
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             cout << array[i][j] << "  ";
@@ -47,6 +46,7 @@ int main() {
 
     cout << "--------------------" << endl;
 
+    // Виведення сум стовпців та загальної суми
     for (int j = 0; j < cols; ++j) {
         cout << col_sum[j] << "  ";
     }
